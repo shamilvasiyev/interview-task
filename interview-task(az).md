@@ -2,8 +2,8 @@
 
 | Tapşırıq                   | Fokus                              | Çətinlik   | Təxmini Vaxt |
 | -------------------------- | ---------------------------------- | ---------- | ------------ |
-| **1. Fon Rəng**            | DOM Seçimi və Stil                 | Asan       | 15 dəq       |
-| **2. Input Validation**    | Hadisələr (Events) və Şərtlər      | Asan-Orta  | 20 dəq       |
+| **1. Fon Rəngi**           | DOM və Stil                        | Asan       | 15 dəq       |
+| **2. Input Validation**    | Events                             | Asan-Orta  | 20 dəq       |
 | **3. Qiymət Kalkulyatoru** | Massiv İterasiyası və Checkbox-lar | Asan-Orta  | 25 dəq       |
 | **4. Taymer**              | Asinxron JS (`setInterval`)        | Orta-Çətin | 30 dəq       |
 | **5. Data Fetching**       | Async/Await və API Məntiqi         | Çətin      | 30 dəq       |
@@ -12,7 +12,32 @@
 
 ### 1. Fon Rəngi (The Background Color Flipper)
 
-**Məqsəd:** Düyməyə kliklədikdə `document.body`-nin fon rəngini verilmiş massivdən təsadüfi bir rənglə dəyişən proqram hazırlayın: `['#FF5733', '#33FF57', '#3357FF', '#F333FF']`.
+**Məqsəd:** Düyməyə kliklədikdə `document.body`-nin fon rəngini verilmiş massivdən təsadüfi bir rənglə dəyişən proqram hazırlayın:
+
+```js
+const COLORS = [
+  "#FF5733",
+  "#33FF57",
+  "#3357FF",
+  "#F333FF",
+  "#FF8C33",
+  "#33FFF5",
+  "#8D33FF",
+  "#FF3333",
+  "#33FF8C",
+  "#FFD433",
+  "#33D4FF",
+  "#FF33A8",
+  "#A833FF",
+  "#33FFBD",
+  "#FF6F61",
+  "#6BFF33",
+  "#FF33D1",
+  "#33FFA1",
+  "#337BFF",
+  "#FFB533",
+];
+```
 
 - **Tələb:** Cari rəngin hex kodunu ekrandakı `<span>` daxilində göstərin.
 - **Nə üçün?** Elementlərin seçilməsi və CSS xüsusiyyətlərinin JS vasitəsilə manipulyasiyasını yoxlayır.
@@ -56,12 +81,12 @@ const products = [
 
 ### 5. "Dinamik İstifadəçi" Kartı
 
-**Məqsəd:** "Yeni İstifadəçi" düyməsinə kliklədikdə əvvəlcə 1-dən 10-a qədər təsadüfi bir ID yaradın, sonra həmin ID-yə uyğun istifadəçini `fetch()` vasitəsilə gətirin.
+**Məqsəd:** "Yeni İstifadəçi" düyməsinə kliklədikdə əvvəlcə 1-dən 100-Ə qədər təsadüfi bir ID yaradın, sonra həmin ID-yə uyğun istifadəçini `fetch()` vasitəsilə gətirin.
 
-- **Tələb:** 1. Düyməyə klikləndikdə `Math.random()` istifadə edərək 1 və 10 daxil olmaqla təsadüfi tam ədəd yaradın.
+- **Tələb:** 1. Düyməyə klikləndikdə `Math.random()` istifadə edərək 1 və 100 daxil olmaqla təsadüfi tam ədəd yaradın.
 
-2. Həmin rəqəmi sorğu ünvanına əlavə edin (məsələn: `https://jsonplaceholder.typicode.com/users/ID`).
-3. Gələn məlumatdan istifadəçinin adını, e-poçtunu və ünvan (address/city) məlumatlarını ekranda göstərin.
+2. Həmin rəqəmi sorğu ünvanına əlavə edin (məsələn: `https://jsonplaceholder.typicode.com/users/{ID}`).
+3. Gələn məlumatdan istifadəçinin adı, soyadı, doğum tarixini, profil şəklini, e-poçtunu və ünvan (address/city) məlumatlarını ekranda göstərin.
 
 - **Nə üçün?** Bu tapşırıq tələbənin həm riyazi metodlarla işləmək, həm də **Template Literals** (şablon sətirlər) vasitəsilə dinamik URL-lər yaratmaq bacarığını yoxlayır.
 
@@ -70,4 +95,4 @@ const products = [
 ### Tələbələr üçün kiçik ipucu:
 
 Sorğu ünvanını qurarkən statik link deyil, dəyişəndən istifadə etmək daha effektivdir:
-`fetch(\`[https://www.google.com/search?q=https://jsonplaceholder.typicode.com/users/$](https://jsonplaceholder.typicode.com/users/$){randomID}`)`
+`fetch(`https://jsonplaceholder.typicode.com/users/{randomID}`)`
