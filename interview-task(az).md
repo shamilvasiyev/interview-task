@@ -85,7 +85,7 @@ const products = [
 
 - **Tələb:** 1. Düyməyə klikləndikdə `Math.random()` istifadə edərək 1 və 100 daxil olmaqla təsadüfi tam ədəd yaradın.
 
-2. Həmin rəqəmi sorğu ünvanına əlavə edin (məsələn: `https://jsonplaceholder.typicode.com/users/{ID}`).
+2. Həmin rəqəmi sorğu ünvanına əlavə edin (məsələn: `https://dummyjson.com/users/{ID}`).
 3. Gələn məlumatdan istifadəçinin adı, soyadı, doğum tarixini, profil şəklini, e-poçtunu və ünvan (address/city) məlumatlarını ekranda göstərin.
 
 - **Nə üçün?** Bu tapşırıq tələbənin həm riyazi metodlarla işləmək, həm də **Template Literals** (şablon sətirlər) vasitəsilə dinamik URL-lər yaratmaq bacarığını yoxlayır.
@@ -95,4 +95,4 @@ const products = [
 ### Tələbələr üçün kiçik ipucu:
 
 Sorğu ünvanını qurarkən statik link deyil, dəyişəndən istifadə etmək daha effektivdir:
-`fetch(`https://jsonplaceholder.typicode.com/users/{randomID}`)`
+`fetch(`https://dummyjson.com/users/{randomID}`)`
