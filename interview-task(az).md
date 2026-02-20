@@ -95,4 +95,4 @@ const products = [
 ### Tələbələr üçün kiçik ipucu:
 
 Sorğu ünvanını qurarkən statik link deyil, dəyişəndən istifadə etmək daha effektivdir:
-`fetch(`https://dummyjson.com/users/{randomID}`)`
+`fetch(https://dummyjson.com/users/{randomID})`
